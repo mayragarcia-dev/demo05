@@ -23,6 +23,10 @@ public class ProductoService {
         return productoRepository.findById(id).orElse(null);
     }
 
+    public List<Producto> buscarPorNombre(String nombre) {
+        return productoRepository.findByNombreContaining(nombre);
+    }
+
     public Producto guardar(Producto producto) {
         return productoRepository.save(producto);
     }
